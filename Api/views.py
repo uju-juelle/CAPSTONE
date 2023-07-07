@@ -65,39 +65,3 @@ class Booking_page(APIView):
 
 
 
-
-# class api_homepage(APIView):
-#     def get(self, request, id):
-#          detail = Post.objects.get(id=id)
-#          new_serializer = PostSerializer(detail)
-#          return Response(new_serializer.data, status=status.HTTP_200_OK)
-    
-#     def post(self, request):
-#           serializer = PostSerializer(data=request.data)
-#           if serializer.is_valid():
-#             serializer.save()
-#             return Response({"success": "Nice Work!!",
-#                             "data": serializer.data}, status=status.HTTP_201_CREATED)
-#           return Response("invalid data entered")
-    
-
-
-# class api_detailpage(APIView):
-#     def get(self, request, id):
-#          detail = Post.objects.get(id=id)
-#          new_serializer = PostSerializer(detail)
-#          return Response(new_serializer.data, status=status.HTTP_200_OK)
-
-#     def put(self,request, id):
-#         detail = Post.objects.get(id=id)
-#         serializer = PostSerializer(detail, data=request.data, partial=True)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-  
-#     def delete(self,request, id):
-#         detail = Post.objects.get(id=id)
-#         detail.delete()
-#         return Response("Post has been deleted", status=status.HTTP_204_NO_CONTENT)
-
