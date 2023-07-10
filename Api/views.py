@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.filters import SearchFilter
 
 class House_homepage(APIView):
+    serializer_class = HouseSerializer 
     permission_classes = [AllowAny]
     filter_backends = [SearchFilter]
     search_fields = ["type"]
@@ -19,6 +20,7 @@ class House_homepage(APIView):
 
 
 class Create_page(APIView):
+    serializer_class = HouseSerializer
     permission_classes = [IsAuthenticated]
     def post(self, request):
         serializer = HouseSerializer(data=request.data)
@@ -30,6 +32,7 @@ class Create_page(APIView):
     
 
 class house_detailpage(APIView):
+    serializer_class = HouseSerializer
     permission_classes = [AllowAny]
     def get(self, request, id):
         detail = House.objects.get(id=id)
@@ -38,6 +41,7 @@ class house_detailpage(APIView):
     
 
 class Booking_page(APIView):
+    serializer_class = BookingSerializer
     permission_classes = [AllowAny]
     def post(self, request):
         houses = Booking.objects.all()
@@ -47,21 +51,3 @@ class Booking_page(APIView):
             # Booking.objects.create(name=name, )
             return Response({"success": "successful booking", 
                              "data": serializer.data}, status=status.HTTP_202_ACCEPTED)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

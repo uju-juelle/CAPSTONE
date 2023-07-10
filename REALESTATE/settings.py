@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Web.apps.WebConfig',
     "rest_framework",
     'djoser',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -152,10 +153,18 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
    
 }
 
+
+SPECTACULAR_SETTINGS = {
+"TITLE": "REAL ESTATE API Project",
+"DESCRIPTION": "A Project for real estate company to display and make sales",
+"VERSION": "1.0.0",
+# OTHER SETTINGS
+}
 
 # SIMPLE_JWT = {
 #    'AUTH_HEADER_TYPES': ('JWT',),

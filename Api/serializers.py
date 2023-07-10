@@ -5,7 +5,8 @@ from .models import House, Booking
 class HouseSerializer(serializers.ModelSerializer):
     class Meta:
         model = House
-        fields = "__all__"
+        fields = ["name", "description", "address", "type", "price", "build_year", "agent"]
+        #"__all__"
         #["name", "description", "address", "type", "price", "build_year", "agent"]
 
 
