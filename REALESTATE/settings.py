@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+from datetime import timedelta
 import os
 from pathlib import Path
 from decouple import config
@@ -164,6 +165,11 @@ SPECTACULAR_SETTINGS = {
 "DESCRIPTION": "A Project for real estate company to display and make sales",
 "VERSION": "1.0.0",
 # OTHER SETTINGS
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=50),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
 # SIMPLE_JWT = {

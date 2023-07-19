@@ -41,7 +41,7 @@ class house_detailpage(APIView):
     
 
 class Booking_page(APIView):
-    serializer_class = BookingSerializer
+    serializer_class = BookingSerializer 
     permission_classes = [AllowAny]
     def post(self, request):
         houses = Booking.objects.all()
