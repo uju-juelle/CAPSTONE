@@ -46,8 +46,8 @@ class Booking_page(APIView):
     def post(self, request):
         houses = Booking.objects.all()
         serializer = BookingSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             # Booking.objects.create(name=name, )
-#             return Response({"success": "successful booking", 
-#                              "data": serializer.data}, status=status.HTTP_202_ACCEPTED)
+        if serializer.is_valid():
+            serializer.save()
+            # Booking.objects.create(name=name, )
+            return Response({"success": "successful booking", 
+                             "data": serializer.data}, status=status.HTTP_202_ACCEPTED)
