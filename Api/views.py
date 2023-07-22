@@ -40,14 +40,14 @@ class house_detailpage(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 
-class Booking_page(APIView):
-    serializer_class = BookingSerializer 
-    permission_classes = [AllowAny]
-    def post(self, request):
-        houses = Booking.objects.all()
-        serializer = BookingSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            # Booking.objects.create(name=name, )
-            return Response({"success": "successful booking", 
-                             "data": serializer.data}, status=status.HTTP_202_ACCEPTED)
+# class Booking_page(APIView):
+#     serializer_class = BookingSerializer 
+#     permission_classes = [AllowAny]
+#     def post(self, request):
+#         houses = Booking.objects.all()
+#         serializer = BookingSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             # Booking.objects.create(name=name, )
+#             return Response({"success": "successful booking", 
+#                              "data": serializer.data}, status=status.HTTP_202_ACCEPTED)
